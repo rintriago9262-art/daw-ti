@@ -1,0 +1,35 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Portafolio - Roberth Intriago{% endblock %}
+
+{% block background %}{% static 'core/img/portfolio-bg.jpg' %}{% endblock %}
+
+{% block title_header %}Portafolio{% endblock %}
+{% block subtitle_header %}Mis Proyectos{% endblock %}
+
+{% block content %}
+
+<!-- Proyectos dinámicos estilo fila -->
+{% for p in proyectos %}
+<div class="row project mb-5">
+    <div class="col-lg-3 col-md-4 offset-lg-1">
+        {% if p.imagen %}
+            <img class="img-fluid" src="{{ p.imagen.url }}" alt="{{ p.titulo }}">
+        {% endif %}
+    </div>
+    <div class="col-lg-7 col-md-8">
+        <h2 class="section-heading title">{{ p.titulo }}</h2>
+        <p>{{ p.descripcion }}</p>
+        {% if p.enlace %}
+            <p><a href="{{ p.enlace }}" target="_blank">Más información</a></p>
+        {% endif %}
+    </div>
+</div>
+{% empty %}
+<div class="col-12 text-center text-muted mt-4">
+    <h4>No hay proyectos disponibles.</h4>
+</div>
+{% endfor %}
+
+{% endblock %}

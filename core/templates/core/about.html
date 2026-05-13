@@ -1,0 +1,22 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Acerca de - Roberth Intriago{% endblock %}
+
+{% block background %}{% static 'core/img/about-bg.jpg' %}{% endblock %}
+
+{% block title_header %}Acerca de{% endblock %}
+{% block subtitle_header %}Biografía{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-3 col-md-4 offset-lg-1">
+        <img class="img-fluid avatar" src="{% static 'core/img/avatar.jpg' %}" alt="Roberth Intriago">
+    </div>
+    <div class="col-lg-7 col-md-8">
+        <h2 class="section-heading">Roberth Intriago</h2>
+        <p>Estudiante de Tecnología de la Información, apasionado por el desarrollo de software y las nuevas tecnologías digitales.</p>
+        <p>Me interesa el desarrollo web, las bases de datos y la creación de soluciones que impacten positivamente en las personas.</p>
+    </div>
+</div>
+{% endblock %}
